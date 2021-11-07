@@ -15,9 +15,10 @@ namespace Hashtable
             CountWordFrequency(sentence );
             Console.ReadLine();
         }
+        //create method to count frequency
         public static void CountWordFrequency(string sentence)
         {
-            MyHashCode<string, int> hashtable = new MyHashCode<string, int>(6);
+            MyHashCode<string, int> hashtable = new MyHashCode<string, int>(10);
             string[] words = sentence.Split(' ');
             foreach (string word in words)
             {

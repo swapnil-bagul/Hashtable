@@ -15,6 +15,8 @@ namespace Hashtable
     {
         private readonly int size;
         private readonly LinkedList<KeyValue<K, V>>[] items;
+
+        //constructor to initialise
         public MyHashCode(int size)
         {
             this.size = size;
@@ -22,11 +24,14 @@ namespace Hashtable
 
         }
 
+        //method to find the position of the hash table (creatind hash code)
         protected int getArrayPosition(K key)
         {
-            int position = key.GetHashCode() % size;
+            int hash = key.GetHashCode();
+            int position = hash % size;
             return Math.Abs(position);
         }
+        //method to get a value stored in perticular key
         public V get(K key)
         {
             int position = getArrayPosition(key);
@@ -42,11 +47,17 @@ namespace Hashtable
             return default(V);
         }
 
+        //Add method for insert value in hashtable
         public void Add(K key, V value)
         {
             int position = getArrayPosition(key);
             LinkedList<KeyValue<K, V>> linkedlist = GetLinkedList(position);
-            KeyValue<K, V> item = new KeyValue<K, V>() { Key = key, Value = value };
+            //object of keyvalue
+            //object initialisation(declaration and intialization at a one time)
+            //it does not invoke constructor
+            KeyValue<K, V> item = new KeyValue<K, V>() 
+            //assign value to key and value
+            { Key = key, Value = value };
             if (linkedlist.Count != 0)
             {
                 foreach (KeyValue<K, V> item1 in linkedlist)
