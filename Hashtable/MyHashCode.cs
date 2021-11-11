@@ -72,7 +72,7 @@ namespace Hashtable
             }
             linkedlist.AddLast(item);
         }
-
+        //to remove the if already exist
         public void Remove(K key)
         {
             int position = getArrayPosition(key);

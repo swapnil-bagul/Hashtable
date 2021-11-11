@@ -11,7 +11,7 @@ namespace Hashtable
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
-            string sentence = "To be or not to be";
+            string sentence = "Paranoids are not paranoid because they are paranoid but because they keep putting themselves deliberately into paranoid avoidable situations";
             CountWordFrequency(sentence );
             Console.ReadLine();
         }
